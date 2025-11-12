@@ -19,7 +19,7 @@
 
 # production
 /build
-
+/CODE_GUIDE.md
 # misc
 .DS_Store
 *.pem
