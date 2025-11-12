@@ -205,10 +205,6 @@ export default function NewsletterForm() {
                 )}
               </button>
             </div>
-
-            <p className="text-center text-sm text-gray-500">
-              By subscribing, you agree to receive emails from us. You can unsubscribe at any time.
-            </p>
           </form>
         </div>
       </div>

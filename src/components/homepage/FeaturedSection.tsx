@@ -12,17 +12,24 @@ export default function FeaturedSection() {
   <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-8 flex items-center gap-3">
-          <Pencil className="text-[#951A28]" />
-          <h2 className="text-2xl font-bold uppercase tracking-wide text-[#951A28]">
-            Featured
-          </h2>
+        <div className="mb-8 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Pencil className=" text-[#951A28]" />
+            {/* <Youtube size={16} strokeWidth={0.75} absoluteStrokeWidth /> */}
+            <h2 className="text-2xl font-bold uppercase tracking-wide text-[#951A28]">
+              Featured
+            </h2>
+          </div>
+          <button className="rounded-3xl bg-[#951A28] px-4 py-1 text-sm font-semibold text-white transition-all hover:bg-[#7a1520]">
+            See all
+            <span className="ml-1">→</span>
+          </button>
         </div>
 
         {/* Featured Content Grid */}
-        <div className="grid grid-cols-2 grid-rows-1 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* Main Featured Card - Agentic AI (Item 1) */}
-          <div className="row-span-3 group relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-600 via-purple-500 to-indigo-600">
+          <div className="lg:col-span-2 group relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 to-purple-800">
             <div className="relative p-8 sm:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[400px]">
                 
@@ -41,196 +48,120 @@ export default function FeaturedSection() {
 
                 {/* Right Side - Text Content */}
                 <div className="text-white space-y-6 order-1 lg:order-2">
-                  {/* Featured Badge */}
-                  <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium">
-                    FEATURED
-                  </div>
 
                   {/* Main Heading */}
-                  <h3 className="text-4xl lg:text-5xl font-bold leading-tight">
+                  <h3 className="text-4xl text-center lg:text-5xl font-bold leading-tight">
                     Agentic AI Development
                     
                   </h3>
 
                   {/* Description */}
-                  <p className="text-lg text-white/90 leading-relaxed">
+                  <p className="text-lg top-10 right-3 text-white bg-black/20 text-center leading-loose">
+                    Why Startups Are Hiring Agentic AI Developers in 2025
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side Articles */}
+          <div className="space-y-4">
+            {/* Article 1 */}
+            <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
+              <div className="flex gap-3 p-3">
+                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded">
+                  <Image
+                    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600"
+                    alt="Leadership dilemma"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 mb-1">
+                    The Leadership Dilemma In The Age Of AI: Are You Ready To Lead What You Don't Fully Understand?
+                  </h4>
+                  <p className="text-xs text-gray-600    mb-1">Unfold Consulting</p>
+                  <div className="absolute right-20 rounded bg-yellow-500 px-2 py-0.5 text-xs font-semibold text-white">
+                    AI
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    
+                    <span className="flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                        <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+                      </svg>
+                      403
+                    </span>
+                    <span>10 Oct 2025</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Article 2 */}
+            <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
+              <div className="flex gap-3 p-3">
+                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600"
+                    alt="Agentic AI Development"
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 mb-1">
                     Why Startups Are Hiring Agentic AI Developers In 2025
-                  </p>
-
-                  {/* Feature Points */}
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 text-white/80">
-                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      <span className="text-sm">Advanced AI Solutions</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-white/80">
-                      <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
-                      <span className="text-sm">Cutting-Edge Technology</span>
-                    </div>
-                    <div className="flex items-center space-x-3 text-white/80">
-                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                      <span className="text-sm">Future-Ready Development</span>
-                    </div>
+                  </h4>
+                  <p className="text-xs text-gray-600 mb-1">Sparkout Tech</p>
+                  <div className="absolute right-20 rounded bg-yellow-500 px-2 py-0.5 text-xs font-semibold text-white">
+                    AI
                   </div>
-
-                  {/* Action Button */}
-                  <button
-                    onClick={() => openModal('agentic-ai')}
-                    className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 font-semibold text-purple-600 transition-all hover:bg-gray-100 hover:shadow-xl"
-                  >
-                    Learn More
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                        <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+                      </svg>
+                      788
+                    </span>
+                    <span>05 Oct 2025</span>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              {/* Decorative Background Elements */}
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
-              <div className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-indigo-400/20 blur-3xl" />
-              <div className="absolute top-1/2 left-0 w-16 h-16 bg-yellow-400/10 rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Article 1 (Item 2) */}
-          <div className="flex group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
-            <div className="relative h-40 w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600"
-                alt="Technology advancement"
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
-              />
-              <div className="absolute right-3 top-3 rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold text-white">
-                NEW
-              </div>
-            </div>
-            <div className="p-4">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Technology • 2 days ago
-              </p>
-              <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                Why Leading Agencies Are Now Looking At AI For Key...
-              </h4>
-            </div>
-          </div>
-
-          {/* Article 2 (Item 3) */}
-          <div className="flex group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
-            <div className="relative h-40 w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600"
-                alt="Business insights"
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
-              />
-              <div className="absolute right-3 top-3 rounded-full bg-green-500 px-3 py-1 text-xs font-semibold text-white">
-                HOT
-              </div>
-            </div>
-            <div className="p-4">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Business • 3 days ago
-              </p>
-              <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                Top Industry Secrets Are Being Shared, All For Industry...
-              </h4>
-            </div>
-          </div>
-
-          {/* Article 3 (Item 4) */}
-          <div className="flex group flex-2 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
-            <div className="relative h-40 w-full">
-              <Image
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
-                alt="Data analysis"
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
-              />
-            </div>
-            <div className="p-4">
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                Insights • 5 days ago
-              </p>
-              <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                Think Google Spreadsheets Could Be Killing Your Productivity?
-              </h4>
-            </div>
-          </div>
-        </div>
-
-        {/* Additional Scrollable Articles */}
-        <div className="mt-8">
-          <h3 className="mb-4 text-lg font-bold text-gray-900">More Featured Content</h3>
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-4 w-max">
-              {/* Extra Article 1 */}
-              <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl w-80 shrink-0">
-                <div className="relative h-40 w-full">
+            {/* Article 3 */}
+            <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl">
+              <div className="flex gap-3 p-3">
+                <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded">
                   <Image
-                    src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600"
-                    alt="Digital transformation"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600"
+                    alt="Data Lineage"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
                   />
-                  <div className="absolute right-3 top-3 rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-white">
-                    TRENDING
-                  </div>
                 </div>
-                <div className="p-4">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                    Innovation • 1 day ago
-                  </p>
-                  <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                    Digital Transformation Strategies That Actually Work
+                <div className="flex-1">
+                  <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 mb-1">
+                    Data Lineage: Demystifying Data For Trust, Compliance, And Governance
                   </h4>
-                </div>
-              </div>
-
-              {/* Extra Article 2 */}
-              <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl w-80 shrink-0">
-                <div className="relative h-40 w-full">
-                  <Image
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600"
-                    alt="Team collaboration"
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                  />
-                  <div className="absolute right-3 top-3 rounded-full bg-purple-500 px-3 py-1 text-xs font-semibold text-white">
-                    POPULAR
+                  <p className="text-xs text-gray-600 mb-1">Vidyatech</p>
+                  <div className="absolute right-20 rounded bg-yellow-500 px-2 py-0.5 text-xs font-semibold text-white">
+                    Data Sc. & AI Com..
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                    Leadership • 3 days ago
-                  </p>
-                  <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                    Building Remote Teams That Excel in 2025
-                  </h4>
-                </div>
-              </div>
-
-              {/* Extra Article 3 */}
-              <div className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-all hover:shadow-xl w-80 shrink-0">
-                <div className="relative h-40 w-full">
-                  <Image
-                    src="https://images.unsplash.com/photo-1573167278390-e4d4ab5e8923?w=600"
-                    alt="Future technology"
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                  />
-                  <div className="absolute right-3 top-3 rounded-full bg-cyan-500 px-3 py-1 text-xs font-semibold text-white">
-                    FUTURE
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <span className="flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                        <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
+                      </svg>
+                      1254
+                    </span>
+                    <span>24 Sep 2025</span>
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                    Technology • 4 days ago
-                  </p>
-                  <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600">
-                    The Future of Work: AI and Human Collaboration
-                  </h4>
                 </div>
               </div>
             </div>

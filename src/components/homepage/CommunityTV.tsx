@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { Youtube   } from 'lucide-react';
 
 const videos = [
   {
     id: '1',
-    title: 'Leader Talk: Driving Client Service Excellence',
+    title: 'Leader Talk | Automation-as-a-Service & AI Workflows | Mahesh Vinayagam, qBotica',
     thumbnail: 'https://images.unsplash.com/photo-1558403194-611308249627?w=800',
     speakers: [
       { name: 'Sameera Jain', role: 'CEO, Tech Innovations' },
@@ -14,8 +15,9 @@ const videos = [
     ],
     duration: '45:30',
     views: '12.5K',
-    date: 'Dec 10, 2024',
+    date: '13 Oct 2024',
     isLive: false,
+    tag: 'Live',
   },
   {
     id: '2',
@@ -23,7 +25,7 @@ const videos = [
     thumbnail: 'https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600',
     duration: '32:15',
     views: '8.2K',
-    date: 'Dec 8, 2024',
+    date: '8 Dec 2024',
     tag: 'Popular',
   },
   {
@@ -32,38 +34,49 @@ const videos = [
     thumbnail: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=600',
     duration: '28:45',
     views: '15.3K',
-    date: 'Dec 5, 2024',
+    date: '5 Dec 2024',
     tag: 'Trending',
   },
+  {
+    id: '4',
+    title: 'Future of Work: Remote Collaboration Tools',
+    thumbnail: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600',
+    duration: '35:20',
+    views: '9.8K',
+    date: '2 Dec 2024',
+    tag: 'New',
+  }
 ];
 
 export default function CommunityTV() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <section className="bg-gray-900 px-4 py-12 text-white sm:px-6 lg:px-8">
+    <section className="bg-white px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-1 bg-[#FF6B35]" />
-            <h2 className="text-2xl font-bold uppercase tracking-wide">
+            <Youtube className=" text-[#951A28]" />
+            {/* <Youtube size={16} strokeWidth={0.75} absoluteStrokeWidth /> */}
+            <h2 className="text-2xl font-bold uppercase tracking-wide text-[#951A28]">
               Community TV
             </h2>
           </div>
-          <button className="rounded-lg border border-white/20 px-4 py-2 text-sm font-semibold transition-all hover:bg-white/10">
-            View All Videos
+          <button className="rounded-3xl bg-[#951A28] px-4 py-1 text-sm font-semibold text-white transition-all hover:bg-[#7a1520]">
+            See all
+            <span className="ml-1">→</span>
           </button>
         </div>
 
-        <p className="mb-8 text-gray-300">
-          Discover the expert series, conversations, interviews, and blogs all the newest topics
+        <p className="mb-8 text-black">
+          Watch the latest videos, interactions, interviews, and blogs on the newest topics.    
         </p>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {/* Main Video Player */}
           <div className="lg:col-span-2">
-            <div className="group relative overflow-hidden rounded-2xl bg-black">
+            <div className="group relative ">
               {/* Video Thumbnail with Play Button */}
               <div className="relative aspect-video w-full">
                 <iframe 
@@ -74,7 +87,7 @@ export default function CommunityTV() {
                 allowFullScreen 
                 className="absolute inset-0 h-full w-full rounded-2xl"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+              {/* <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent pointer-events-none" /> */}
 
 
                 
@@ -94,8 +107,8 @@ export default function CommunityTV() {
               </div>
 
               {/* Video Info */}
-              <div className="p-6">
-                <h3 className="mb-3 text-2xl font-bold">{selectedVideo.title}</h3>
+              <div className="p-6 text-black">
+                <h3 className="mb-3 text-lg  font-bold">{selectedVideo.title}</h3>
 
                 {/* {selectedVideo.speakers && (
                   <div className="mb-4 flex flex-wrap gap-4">
@@ -111,52 +124,46 @@ export default function CommunityTV() {
                   </div>
                 )} */}
 
-                <div className="flex items-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center gap-4 text-sm text-black">
+                  <span>{selectedVideo.date}</span>
+                  <span>•</span>
                   <span className="flex items-center gap-1">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                     {selectedVideo.views} views
-                  </span>
-                  <span>•</span>
-                  <span>{selectedVideo.date}</span>
+                  </span> 
                 </div>
               </div>
             </div>
           </div>
 
           {/* Video Playlist */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-bold">Up Next</h4>
+          <div className="space-y-8">
             <div className="space-y-4">
               {videos.filter(v => v.id !== selectedVideo.id).map((video) => (
                 <div
                   key={video.id}
                   onClick={() => setSelectedVideo(video)}
-                  className="group cursor-pointer overflow-hidden rounded-lg bg-gray-800 transition-all hover:bg-gray-700"
+                  className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg transition-all hover:bg-gray-700"
                 >
                   <div className="flex gap-3 p-3">
-                    <div className="relative h-20 w-32 flex-shrink-0 overflow-hidden rounded">
+                    <div className="relative w-32 h-30 shrink-0 overflow-hidden rounded">
                       <Image
                         src={video.thumbnail}
                         alt={video.title}
                         fill
                         className="object-cover"
                       />
-                      {video.tag && (
-                        <div className="absolute right-1 top-1 rounded bg-orange-500 px-2 py-0.5 text-xs font-semibold">
-                          {video.tag}
-                        </div>
-                      )}
-                      <div className="absolute bottom-1 right-1 rounded bg-black/80 px-1 text-xs">
-                        {video.duration}
-                      </div>
                     </div>
                     <div className="flex-1">
-                      <h5 className="mb-1 line-clamp-2 text-sm font-semibold group-hover:text-[#FF6B35]">
+                      <h5 className="mb-1 line-clamp-2 text-sm text-black font-semibold group-hover:text-[#EAAA02]]">
                         {video.title}
                       </h5>
+                        <div className="relative rounded bg-[#E9AB00] px-2 py-0.5 w-fit text-xs font-semibold">
+                          {video.tag}
+                        </div>
                       <p className="text-xs text-gray-400">{video.views} views</p>
                       <p className="text-xs text-gray-400">{video.date}</p>
                     </div>
