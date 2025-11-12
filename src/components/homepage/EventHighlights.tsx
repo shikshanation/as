@@ -138,9 +138,20 @@ export default function EventHighlights() {
           </div>
         </div>
       </div>
+      {/* Navigation buttons overlay */}
+      <div className="absolute right-6 top-6 z-20 flex flex-wrap gap-3">
+        <button className="rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl">
+          Become a Member
+        </button>
+        <button className="rounded-md bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-xl">
+          Members Zone
+        </button>
+        <button className="rounded-md bg-red-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-red-600 hover:shadow-xl">
+          Employee Zone
+        </button>
+      </div>
       <div className="flex mt-10 ml-10 items-center justify-start">
             <FileType className=" text-[#951A28]" />
-            {/* <Youtube size={16} strokeWidth={0.75} absoluteStrokeWidth /> */}
             <h2 className="text-lg ml-2 font-bold uppercase tracking-wide text-[#951A28]">
               REPORTS & INSIGHTS
             </h2>

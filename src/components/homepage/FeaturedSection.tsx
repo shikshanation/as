@@ -15,7 +15,6 @@ export default function FeaturedSection() {
         <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Pencil className=" text-[#951A28]" />
-            {/* <Youtube size={16} strokeWidth={0.75} absoluteStrokeWidth /> */}
             <h2 className="text-2xl font-bold uppercase tracking-wide text-[#951A28]">
               Featured
             </h2>

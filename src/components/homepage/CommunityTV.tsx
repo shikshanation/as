@@ -99,30 +99,11 @@ export default function CommunityTV() {
                     <span className="text-xs font-semibold">LIVE</span>
                   </div>
                 )}
-
-                {/* Duration */}
-                <div className="absolute bottom-4 right-4 rounded bg-white px-2 py-1 text-xs font-semibold">
-                  {selectedVideo.duration}
-                </div>
               </div>
 
               {/* Video Info */}
               <div className="p-6 text-black">
                 <h3 className="mb-3 text-lg  font-bold">{selectedVideo.title}</h3>
-
-                {/* {selectedVideo.speakers && (
-                  <div className="mb-4 flex flex-wrap gap-4">
-                    {selectedVideo.speakers.map((speaker, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500" />
-                        <div>
-                          <p className="text-sm font-semibold">{speaker.name}</p>
-                          <p className="text-xs text-gray-400">{speaker.role}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )} */}
 
                 <div className="flex items-center gap-4 text-sm text-black">
                   <span>{selectedVideo.date}</span>
