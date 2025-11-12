@@ -55,7 +55,7 @@ export default function CommunityTV() {
     <section className="bg-white px-4 py-12 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Youtube className=" text-[#951A28]" />
             {/* <Youtube size={16} strokeWidth={0.75} absoluteStrokeWidth /> */}

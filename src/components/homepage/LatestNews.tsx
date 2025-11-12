@@ -133,7 +133,7 @@ export default function LatestNews() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className={`absolute flex right-0 top-40 rounded-full bg-[#951A28] p-5 py-1 text-xs font-semibold text-white shadow-lg `}>
+                    <div className={`absolute flex right-0 top-40 rounded-full bg-[#951A28] px-2 py-1 text-xs font-semibold text-white shadow-lg`}>
                       <Eye size={16} strokeWidth={1.5} />
                       {article.tag}
                     </div>

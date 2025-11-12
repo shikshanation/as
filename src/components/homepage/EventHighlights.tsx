@@ -146,7 +146,7 @@ export default function EventHighlights() {
             </h2>
             
         </div>
-        <p className='ml-10 text-gray-800'>Got key incights on latect tonice creating impact for all stakeholdere</p>
+        <p className='ml-10 mt-4 text-gray-800'>Got key incights on latect tonice creating impact for all stakeholdere</p>
     </section>
   );
 }
