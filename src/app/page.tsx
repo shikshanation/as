@@ -6,11 +6,11 @@ import LatestNews from '@/components/homepage/LatestNews';
 import EventHighlights from '@/components/homepage/EventHighlights';
 import CommunityTV from '@/components/homepage/CommunityTV';
 import PressRelease from '@/components/homepage/PressRelease';
-// import NewsletterForm from '@/components/homepage/NewsletterForm';
 import PartnerLogos from '@/components/homepage/PartnerLogos';
 import WebinarBanner from '@/components/WebinarBanner';
 import Modal from '@/components/ui/Modal';
 import NewsletterModal from '@/components/NewsletterModal';
+import MemberRegistrationForm from '@/components/MemberRegistrationForm';
 import { useAppStore } from '@/store/useAppStore';
 
 export default function Home() {
@@ -33,6 +33,7 @@ export default function Home() {
       {/* Modal */}
       <Modal>
         {modalContent === 'newsletter' && <NewsletterModal />}
+        {modalContent === 'member-registration' && <MemberRegistrationForm />}
       </Modal>
     </main>
   );

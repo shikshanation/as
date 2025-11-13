@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useAppStore } from '@/store/useAppStore';
 
 interface HeroImage {
   id: string;
@@ -44,6 +45,7 @@ const heroImages: HeroImage[] = [
 
 export default function HeroGrid() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { openModal } = useAppStore();
 
   return (
     <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen w-full">
@@ -90,7 +92,10 @@ export default function HeroGrid() {
 
       {/* Navigation buttons overlay */}
       <div className="absolute right-3 top-3 sm:right-6 sm:top-6 z-20 flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
-        <button className="rounded-md bg-green-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl whitespace-nowrap">
+        <button
+          onClick={() => openModal('member-registration')}
+          className="rounded-md bg-green-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl whitespace-nowrap"
+        >
           Become a Member
         </button>
         <button className="rounded-md bg-orange-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-xl whitespace-nowrap">

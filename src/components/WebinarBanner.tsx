@@ -57,7 +57,7 @@ export default function WebinarBanner({
 
           <button
             onClick={handleRegisterClick}
-            className="bg-[#F4D03F] hover:bg-[#F7DC6F] text-black font-bold text-xs sm:text-sm py-2 px-6 sm:py-3 sm:px-10 rounded-full shadow-lg transition-all duration-200 hover:shadow-xl"
+            className="bg-[#F4D03F] hover:bg-[#F7DC6F] text-black font-bold text-xs sm:text-sm py-2 px-6 sm:py-3 sm:px-10 rounded-full shadow-lg transition-all duration-200 hover:shadow-xl animate-pulse"
           >
             REGISTER NOW
           </button>
