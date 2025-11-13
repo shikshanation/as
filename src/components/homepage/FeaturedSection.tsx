@@ -36,7 +36,7 @@ export default function FeaturedSection() {
                 <div className="relative flex justify-center lg:justify-start order-2 lg:order-1 row-span-3">
                   <div className="relative w-64 h-64 lg:w-80 lg:h-80">
                     <Image
-                      src="/download.png"
+                      src="/robot.png"
                       alt="AI Robot"
                       fill
                       className="object-contain"
