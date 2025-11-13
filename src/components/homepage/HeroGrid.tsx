@@ -46,8 +46,8 @@ export default function HeroGrid() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative h-screen w-full">
-      <div className="grid h-full grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen w-full">
+      <div className="grid h-full grid-cols-2 gap-1 sm:grid-cols-2 lg:grid-cols-4">
         {heroImages.map((item, index) => (
           <div
             key={item.id}
@@ -63,7 +63,7 @@ export default function HeroGrid() {
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority={index < 2}
                 quality={90}
@@ -74,29 +74,29 @@ export default function HeroGrid() {
             </div>
 
             {/* Label */}
-            <div className="absolute bottom-8 left-6 z-10 transition-all duration-300 group-hover:bottom-10 group-hover:scale-105">
-              <div className="bg-[#F26225] px-6 py-3 text-base font-bold uppercase tracking-wider text-white shadow-xl">
+            <div className="absolute bottom-4 left-3 sm:bottom-8 sm:left-6 z-10 transition-all duration-300 group-hover:bottom-6 sm:group-hover:bottom-10 group-hover:scale-105">
+              <div className="bg-[#F26225] px-3 py-2 sm:px-6 sm:py-3 text-xs sm:text-base font-bold uppercase tracking-wider text-white shadow-xl">
                 {item.label}
               </div>
             </div>
 
             {/* Active indicator */}
             {activeIndex === index && (
-              <div className="absolute left-0 top-0 h-full w-2 bg-[#FF6B35] shadow-lg" />
+              <div className="absolute left-0 top-0 h-full w-1 sm:w-2 bg-[#FF6B35] shadow-lg" />
             )}
           </div>
         ))}
       </div>
 
       {/* Navigation buttons overlay */}
-      <div className="absolute right-6 top-6 z-20 flex flex-wrap gap-3">
-        <button className="rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl">
+      <div className="absolute right-3 top-3 sm:right-6 sm:top-6 z-20 flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
+        <button className="rounded-md bg-green-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-green-600 hover:shadow-xl whitespace-nowrap">
           Become a Member
         </button>
-        <button className="rounded-md bg-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-xl">
+        <button className="rounded-md bg-orange-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-orange-600 hover:shadow-xl whitespace-nowrap">
           Members Zone
         </button>
-        <button className="rounded-md bg-red-500 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:bg-red-600 hover:shadow-xl">
+        <button className="rounded-md bg-red-500 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold text-white shadow-lg transition-all hover:bg-red-600 hover:shadow-xl whitespace-nowrap">
           Employee Zone
         </button>
       </div>

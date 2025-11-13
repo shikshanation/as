@@ -19,9 +19,6 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroGrid />
-      
-      
-      {/* Webinar Banner */}
       <section className="py-8 px-4">
         <WebinarBanner />
       </section>
