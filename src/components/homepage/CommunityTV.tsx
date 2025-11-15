@@ -49,27 +49,27 @@ export default function CommunityTV() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
 
   return (
-    <section className="bg-white px-4 py-12 text-white sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Youtube className="text-[#951A28] w-6 h-6 sm:w-8 sm:h-8" />
-            <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-wide text-[#951A28]">
+    <section className="px-4 bg-white py-12 text-white sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row mb-4 items-start sm:items-center gap-3 sm:gap-0 justify-between">
+          <div className="flex gap-2 sm:gap-3 items-center">
+            <Youtube className="w-6 h-6 text-[#951A28] sm:w-8 sm:h-8" />
+            <h2 className="font-bold text-xl sm:text-2xl uppercase text-[#951A28] tracking-wide">
               Community TV
             </h2>
           </div>
-          <button className="rounded-3xl bg-[#951A28] px-4 py-1 text-xs sm:text-sm font-semibold text-white transition-all hover:bg-[#7a1520]">
+          <button className="bg-[#951A28] text-white rounded-3xl px-4 py-1 hover:bg-[#7a1520] text-xs sm:text-sm font-semibold transition-all">
             See all
             <span className="ml-1">→</span>
           </button>
         </div>
 
-        <p className="mb-6 sm:mb-8 text-sm sm:text-base text-black">
+        <p className="text-black mb-6 sm:mb-8 text-sm sm:text-base">
           Watch the latest videos, interactions, interviews, and blogs on the
           newest topics.
         </p>
 
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-3">
+        <div className="gap-6 sm:gap-8 grid lg:grid-cols-3">
           {/* Main Video Player */}
           <div className="lg:col-span-2">
             <div className="group relative ">
@@ -105,7 +105,6 @@ export default function CommunityTV() {
             </div>
           </div>
 
-          {/* Video Playlist */}
           <div className="space-y-8">
             <div className="space-y-4">
               {videos
@@ -114,10 +113,10 @@ export default function CommunityTV() {
                   <div
                     key={video.id}
                     onClick={() => setSelectedVideo(video)}
-                    className="group cursor-pointer overflow-hidden rounded-lg bg-white shadow-lg transition-all hover:bg-gray-700"
+                    className="cursor-pointer group overflow-hidden bg-white rounded-lg shadow-lg hover:bg-gray-700 transition-all"
                   >
-                    <div className="flex gap-2 sm:gap-3 p-2 sm:p-3">
-                      <div className="relative w-24 h-20 sm:w-32 sm:h-30 shrink-0 overflow-hidden rounded">
+                    <div className="flex p-2 sm:p-3 gap-2 sm:gap-3">
+                      <div className="w-24 relative h-20 sm:w-32 sm:h-30 shrink-0 rounded overflow-hidden">
                         <Image
                           src={video.thumbnail}
                           alt={video.title}
@@ -126,10 +125,10 @@ export default function CommunityTV() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h5 className="mb-1 line-clamp-2 text-xs sm:text-sm text-black font-semibold group-hover:text-[#EAAA02]">
+                        <h5 className="line-clamp-2 mb-1 text-xs sm:text-sm font-semibold text-black group-hover:text-[#EAAA02]">
                           {video.title}
                         </h5>
-                        <div className="rounded bg-[#E9AB00] px-1.5 sm:px-2 py-0.5 w-fit text-xs font-semibold mb-1">
+                        <div className="bg-[#E9AB00] rounded px-1.5 sm:px-2 py-0.5 text-xs w-fit font-semibold mb-1">
                           {video.tag}
                         </div>
                         <p className="text-xs text-gray-400">

@@ -43,33 +43,30 @@ const events = [
 
 export default function EventHighlights() {
   return (
-    <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
+    <section className="px-4 bg-white py-12 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold uppercase tracking-wide text-gray-900">
+          <h2 className="font-bold text-2xl uppercase text-gray-900 tracking-wide">
             Event Highlights
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-          {/* Main Event Card */}
-          <div className="group relative overflow-hidden rounded-2xl shadow-xl">
-            <div className="relative h-64 sm:h-80 lg:h-96 w-full">
+        <div className="gap-6 grid sm:gap-8 lg:grid-cols-2">
+          <div className="relative group overflow-hidden shadow-xl rounded-2xl">
+            <div className="h-64 relative sm:h-80 lg:h-96 w-full">
               <Image
                 src={events[0].image}
                 alt={events[0].title}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
 
-              {/* Event Info Overlay */}
-              <div className="absolute top-90 p-4 sm:p-8 text-gray-500">
-                <h3 className="mb-2 sm:mb-3 text-base sm:text-lg font-bold">{events[0].title}</h3>
-                <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
-                  <div className="flex items-center gap-2">
+              <div className="top-90 absolute p-4 sm:p-8 text-gray-500">
+                <h3 className="text-base mb-2 sm:mb-3 sm:text-lg font-bold">{events[0].title}</h3>
+                <div className="flex gap-2 flex-wrap sm:gap-4 text-xs sm:text-sm">
+                  <div className="flex gap-2 items-center">
                     <svg
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -83,9 +80,9 @@ export default function EventHighlights() {
                     </svg>
                     <span>{events[0].date}</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex gap-2 items-center">
                     <svg
-                      className="h-5 w-5"
+                      className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -110,20 +107,18 @@ export default function EventHighlights() {
             </div>
           </div>
 
-          {/* Right Column */}
           <div className="space-y-6">
-            {/* Upcoming Events */}
             <div>
-              <h4 className="mb-3 sm:mb-4 text-base sm:text-lg font-bold text-gray-900">
+              <h4 className="text-base mb-3 sm:mb-4 sm:text-lg font-bold text-gray-900">
                 Upcoming Events
               </h4>
-              <div className="space-y-3 sm:space-y-4 overflow-auto">
+              <div className="space-y-3 overflow-auto sm:space-y-4">
                 {events.slice(1).map((event) => (
                   <div
                     key={event.id}
-                    className="flex gap-3 sm:gap-4 rounded-lg border border-gray-200 p-3 sm:p-4 transition-all hover:border-[#FF6B35] hover:shadow-md"
+                    className="flex rounded-lg gap-3 sm:gap-4 border-gray-200 border p-3 sm:p-4 hover:border-[#FF6B35] transition-all hover:shadow-md"
                   >
-                    <div className="relative h-16 w-16 sm:h-20 sm:w-20 shrink-0 overflow-hidden rounded-lg">
+                    <div className="h-16 relative w-16 sm:h-20 sm:w-20 shrink-0 rounded-lg overflow-hidden">
                       <Image
                         src={event.image}
                         alt={event.title}
@@ -132,13 +127,13 @@ export default function EventHighlights() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h5 className="mb-1 text-sm sm:text-base font-bold text-gray-900 line-clamp-2">
+                      <h5 className="text-sm mb-1 sm:text-base font-bold line-clamp-2 text-gray-900">
                         {event.title}
                       </h5>
                       <p className="text-xs text-gray-500">{event.date}</p>
-                      <p className="text-xs text-gray-500 truncate">{event.location}</p>
+                      <p className="text-xs truncate text-gray-500">{event.location}</p>
                     </div>
-                    <button className="self-start rounded bg-gray-100 px-2 sm:px-3 py-1 text-xs font-semibold text-gray-700 transition-colors hover:bg-[#FF6B35] hover:text-white whitespace-nowrap">
+                    <button className="self-start bg-gray-100 rounded px-2 sm:px-3 py-1 text-xs text-gray-700 font-semibold hover:bg-[#FF6B35] transition-colors hover:text-white whitespace-nowrap">
                       Details
                     </button>
                   </div>
@@ -148,13 +143,13 @@ export default function EventHighlights() {
           </div>
         </div>
       </div>
-      <div className="flex mt-8 sm:mt-10 ml-4 sm:ml-10 items-center justify-start">
-        <FileType className="text-[#951A28] w-5 h-5 sm:w-6 sm:h-6" />
-        <h2 className="text-base sm:text-lg ml-2 font-bold uppercase tracking-wide text-[#951A28]">
+      <div className="flex ml-4 mt-8 sm:mt-10 sm:ml-10 items-center justify-start">
+        <FileType className="w-5 text-[#951A28] h-5 sm:w-6 sm:h-6" />
+        <h2 className="ml-2 text-base sm:text-lg font-bold text-[#951A28] uppercase tracking-wide">
           REPORTS & INSIGHTS
         </h2>
       </div>
-      <p className="ml-4 sm:ml-10 mt-3 sm:mt-4 text-sm sm:text-base text-gray-800">
+      <p className="ml-4 sm:ml-10 text-sm mt-3 sm:mt-4 sm:text-base text-gray-800">
         Got key insights on latest topics creating impact for all stakeholders
       </p>
     </section>
