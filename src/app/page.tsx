@@ -7,7 +7,7 @@ import EventHighlights from '@/components/homepage/EventHighlights';
 import CommunityTV from '@/components/homepage/CommunityTV';
 import PressRelease from '@/components/homepage/PressRelease';
 import PartnerLogos from '@/components/homepage/PartnerLogos';
-import WebinarBanner from '@/components/WebinarBanner';
+import WebinarBanner from '@/components/homepage/WebinarBanner';
 import Modal from '@/components/ui/Modal';
 import NewsletterModal from '@/components/NewsletterModal';
 import MemberRegistrationForm from '@/components/MemberRegistrationForm';
