@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Zap, Eye } from "lucide-react";
 
+// temp data - need to connect to CMS later
+// wow this carousel took way longer than expected...
+// seriously why is responsive carousel so hard in 2025?
 const newsArticles = [
   {
     id: "1",
@@ -48,7 +51,7 @@ const newsArticles = [
 ];
 
 export default function LatestNews() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("all"); // TODO: wire this up to actual filtering
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -64,6 +67,7 @@ export default function LatestNews() {
   const maxSlide = Math.max(0, totalCards - visibleCards);
 
   useEffect(() => {
+    // had to add window check because of SSR issues
     if (typeof window !== "undefined") {
       const handleResize = () => {
         setVisibleCards(getVisibleCards());
@@ -74,7 +78,7 @@ export default function LatestNews() {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, []);
+  }, []); // eslint doesn't like this but works fine
 
   const nextSlide = () => {
     setCurrentSlide((prev) => Math.min(prev + 1, maxSlide));
@@ -83,6 +87,9 @@ export default function LatestNews() {
   const prevSlide = () => {
     setCurrentSlide((prev) => Math.max(prev - 1, 0));
   };
+
+  // console.log('current slide:', currentSlide); // for debugging
+  // console.log('visible cards:', visibleCards);
 
   return (
     <section className="px-4 bg-gray-50 py-12 sm:px-6 lg:px-8">

@@ -2,6 +2,8 @@
 
 import { ChevronRight } from "lucide-react";
 
+// NOTE: manually updating this for now
+// should probably move to a CMS but this works
 const pressReleases = [
   {
     id: "1",
@@ -21,6 +23,9 @@ const pressReleases = [
 ];
 
 export default function PressRelease() {
+  // could add search functionality here
+  // also thinking about adding a "load more" button but pagination might be better?
+
   return (
     <section className="px-4 bg-gray-50 py-12 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -33,7 +38,7 @@ export default function PressRelease() {
         </div>
 
         <div className="gap-4 grid sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {pressReleases.map((release) => (
+          {pressReleases.map(release => (
             <div
               key={release.id}
               className="cursor-pointer group bg-white rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all"

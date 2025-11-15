@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { Youtube } from "lucide-react";
 
+// FIXME: replace with actual YouTube API integration
+// NOTE: hardcoded for now, will refactor when we get API access
 const videos = [
   {
     id: "1",
@@ -47,6 +49,12 @@ const videos = [
 
 export default function CommunityTV() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+  // const [isPlaying, setIsPlaying] = useState(false); // not using yet
+
+  // TODO: add video play count tracking
+  // TODO: implement video categories filter
+  // HACK: using iframe for now, should switch to proper YouTube player component
+  // NOTE: tried react-player but had issues with build, this works for now
 
   return (
     <section className="px-4 bg-white py-12 text-white sm:px-6 lg:px-8">

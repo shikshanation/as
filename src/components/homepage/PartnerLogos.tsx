@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 
+// will update with actual partner list
+// these are just placeholders - client will send real logos
 const partners = [
   {
     id: '1',
@@ -41,33 +43,22 @@ const partners = [
 ];
 
 export default function PartnerLogos() {
+  // this infinite scroll animation is kinda janky but client approved it so ¯\_(ツ)_/¯
+
   return (
     <section className="bg-[#F0F1F5] px-4 py-16 sm:px-6 lg:px-8">
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
       <div className="mx-auto max-w-7xl">
-        {/* Section Title */}
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-[#E31336]">
-            India's Best Insurers, 
+            India's Best Insurers,
             <span className="text-gray-600"> all in one place</span>
           </h2>
         </div>
 
-        {/* Partner Logos Carousel */}
         <div className="relative overflow-hidden">
-          {/* Carousel Track */}
-          <div 
-            className="flex gap-8 hover:pause"
-            style={{
-              animation: 'scroll 20s linear infinite',
-            }}
+          <div
+            className="flex gap-8 animate-scroll"
           >
-            {/* First set of logos */}
             {partners.map((partner) => (
               <div
                 key={partner.id}
@@ -83,7 +74,6 @@ export default function PartnerLogos() {
                 </div>
               </div>
             ))}
-            {/* Duplicate set for seamless loop */}
             {partners.map((partner) => (
               <div
                 key={`${partner.id}-duplicate`}

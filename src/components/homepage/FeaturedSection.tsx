@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useAppStore } from "@/store/useAppStore";
-
 import { Pencil } from "lucide-react";
 
 export default function FeaturedSection() {
-  const { openModal } = useAppStore();
+  const { openModal } = useAppStore(); // might use this for article modal later
+  // TODO: make articles clickable and show full content in modal
+  // FIXME: the robot image path might break in production, need to verify
 
   return (
   <section className="px-4 bg-white py-12 sm:px-6 lg:px-8">

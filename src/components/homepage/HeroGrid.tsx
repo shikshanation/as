@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useAppStore } from '@/store/useAppStore';
 
+// might add more images here
+// these unsplash images are good enough for now
 const heroImages = [
   {
     id: '1',
@@ -36,8 +38,15 @@ const heroImages = [
 ];
 
 export default function HeroGrid() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<any>(null);
   const { openModal } = useAppStore();
+
+  // thought about adding animations but seems overkill for now
+
+  // const handleImageClick = (idx: number) => {
+  //   setActiveIndex(idx);
+  //   // maybe add modal here later?
+  // };
 
   return (
     <section className="w-full relative h-[60vh] sm:h-[70vh] lg:h-screen">

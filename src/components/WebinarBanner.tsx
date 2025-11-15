@@ -11,23 +11,16 @@ export default function WebinarBanner({
   speakerName = "Shwetank Saini",
   speakerTitle = "Deputy Director, Nasscom Insights",
   speakerImage = "https://img.freepik.com/free-photo/business-man-owner-company-office_1303-15851.jpg",
-  onRegister
-}: {
-  title?: string;
-  date?: string;
-  time?: string;
-  speakerName?: string;
-  speakerTitle?: string;
-  speakerImage?: string;
-  onRegister?: () => void;
+  onRegister = undefined as any
 }) {
   const { openModal } = useAppStore();
 
   const handleRegisterClick = () => {
+    // checking if custom handler exists first
     if (onRegister) {
       onRegister();
     } else {
-      openModal("newsletter");
+      openModal("newsletter"); // fallback to newsletter modal
     }
   };
   return (

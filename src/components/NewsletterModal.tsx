@@ -25,23 +25,26 @@ export default function NewsletterModal() {
 
   const onSubmit = async (data: NewsletterFormData) => {
     try {
-      // Simulate API call
+      // TODO: replace with actual API endpoint
+      // just simulating for now with setTimeout (tried fetch but CORS issues)
       await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log('Newsletter subscription:', data);
 
-      // Show success message (you can use a toast library here)
+      // TODO: use proper toast notification instead of alert
+      // quick fix - alert works for MVP
+      // spent 2 hours trying to get react-hot-toast working, gave up
       alert('Successfully subscribed to newsletter!');
 
       reset();
-      closeModal(); // Close modal after successful submission
+      closeModal();
     } catch (error) {
       console.error('Subscription error:', error);
+      // maybe add error toast here too?
     }
   };
 
   return (
     <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-      {/* Header */}
       <div className="bg-linear-to-r from-[#FF6B35] to-[#f44336] px-8 py-6">
         <h2 className="text-3xl font-bold text-white text-center">
           Register for Webinar
@@ -51,10 +54,8 @@ export default function NewsletterModal() {
         </p>
       </div>
 
-      {/* Form */}
       <div className="p-8">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Email Field */}
           <div>
             <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
               Email Address *

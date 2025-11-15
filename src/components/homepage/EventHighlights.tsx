@@ -3,6 +3,8 @@
 import { FileType } from "lucide-react";
 import Image from "next/image";
 
+// TODO: fetch from API instead of hardcoded
+// keeping it simple for MVP
 const events = [
   {
     id: "1",
@@ -42,6 +44,13 @@ const events = [
 ];
 
 export default function EventHighlights() {
+  // TODO: add pagination for events
+  // TODO: implement event filtering by date/location
+  // BUG: sometimes the image doesn't load on first render, refresh fixes it tho
+
+  const mainEvent = events[0]; // easier to read
+  const upcomingEvents = events.slice(1);
+
   return (
     <section className="px-4 bg-white py-12 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -55,30 +64,20 @@ export default function EventHighlights() {
           <div className="relative group overflow-hidden shadow-xl rounded-2xl">
             <div className="h-64 relative sm:h-80 lg:h-96 w-full">
               <Image
-                src={events[0].image}
-                alt={events[0].title}
+                src={mainEvent.image}
+                alt={mainEvent.title}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
 
               <div className="top-90 absolute p-4 sm:p-8 text-gray-500">
-                <h3 className="text-base mb-2 sm:mb-3 sm:text-lg font-bold">{events[0].title}</h3>
+                <h3 className="text-base mb-2 sm:mb-3 sm:text-lg font-bold">{mainEvent.title}</h3>
                 <div className="flex gap-2 flex-wrap sm:gap-4 text-xs sm:text-sm">
                   <div className="flex gap-2 items-center">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span>{events[0].date}</span>
+                    <span>{mainEvent.date}</span>
                   </div>
                   <div className="flex gap-2 items-center">
                     <svg
@@ -100,7 +99,7 @@ export default function EventHighlights() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <span>{events[0].location}</span>
+                    <span>{mainEvent.location}</span>
                   </div>
                 </div>
               </div>
@@ -113,7 +112,7 @@ export default function EventHighlights() {
                 Upcoming Events
               </h4>
               <div className="space-y-3 overflow-auto sm:space-y-4">
-                {events.slice(1).map((event) => (
+                {upcomingEvents.map((event) => (
                   <div
                     key={event.id}
                     className="flex rounded-lg gap-3 sm:gap-4 border-gray-200 border p-3 sm:p-4 hover:border-[#FF6B35] transition-all hover:shadow-md"
